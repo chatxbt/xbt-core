@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "The key to store in the KV store"
+        },
+        "value": {
+          "type": ["string", "number", "boolean", "object", "array", "null"],
+          "description": "The value to store in the KV store"
+        }
+      },
+      "required": ["key", "value"],
+      "additionalProperties": false
+    },
+    "context": {
+      "type": "object",
+      "description": "Additional context data for the function",
+      "additionalProperties": true
+    }
+  },
+  "required": ["parameters"],
+  "additionalProperties": false
+}
