@@ -1,6 +1,10 @@
 {
   "name": "test-function",
-  "descriptio": "a function to set the key value pair in xbt kv store",
+  "description": "a function to set the key value pair in xbt kv store",
+  "author": {
+    "name": "innova3 inc.",
+    "wallet": "0x233D659b467e3DDFF9577d38EAF08aB85621CEfD"
+  },
   "schema": {
     "type": "object",
     "properties": {
