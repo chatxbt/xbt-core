@@ -2,30 +2,42 @@
   "name": "test-function",
   "descriptio": "a function to set the key value pair in xbt kv store",
   "schema": {
-  "type": "object",
+    "type": "object",
     "properties": {
-    "parameters": {
-      "type": "object",
-      "properties": {
-        "key": {
-          "type": "string",
-          "description": "The key to store in the KV store"
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key to store in the KV store"
+          },
+          "value": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "array",
+              "null"
+            ],
+            "description": "The value to store in the KV store"
+          }
         },
-        "value": {
-          "type": ["string", "number", "boolean", "object", "array", "null"],
-          "description": "The value to store in the KV store"
-        }
+        "required": [
+          "key",
+          "value"
+        ],
+        "additionalProperties": false
       },
-      "required": ["key", "value"],
-      "additionalProperties": false
+      "context": {
+        "type": "object",
+        "description": "Additional context data for the function",
+        "additionalProperties": true
+      }
     },
-    "context": {
-      "type": "object",
-      "description": "Additional context data for the function",
-      "additionalProperties": true
-    }
-  },
-  "required": ["parameters"],
-  "additionalProperties": false
-  }  
+    "required": [
+      "parameters"
+    ],
+    "additionalProperties": false
+  }
 }
